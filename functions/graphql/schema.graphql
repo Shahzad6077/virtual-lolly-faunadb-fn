@@ -1,8 +1,31 @@
 # Construct a schema, using GraphQL schema language
+scalar Long
+
+type Lolly {
+  id: ID
+  to: String!
+  from: String!
+  description: String!
+  fillTop: String!
+  fillCenter: String!
+  fillBottom: String!
+  path: String
+  ts: Long
+}
+
+input LollyInput {
+  to: String!
+  from: String!
+  description: String!
+  fillTop: String!
+  fillCenter: String!
+  fillBottom: String!
+}
 type Query {
+  getLollyByPath(path: String!): Lolly!
   hello: String
 }
 
 type Mutation {
-  uploadImage(image: String!): String!
+  createVirtualLolly(data: LollyInput!): String! #return the generated path
 }

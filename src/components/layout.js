@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
     <Styled.root
       sx={{
         width: "100%",
-        maxWidth: "container",
+        maxWidth: 1080,
         m: "0 auto",
         display: `flex`,
         flexDirection: `column`,
