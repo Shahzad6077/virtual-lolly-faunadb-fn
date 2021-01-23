@@ -12,13 +12,6 @@ const resolvers = {
     getLollyByPath: async (root, { path }, context) => {
       console.log(path)
       try {
-        // const docRefs = query.Paginate(
-        //   query.Match(query.Index("getLollyByPath"), path)
-        // )
-
-        // let results = await client.query(
-        //   query.Map(docRefs, query.Lambda("ref", query.Get(query.Var("ref"))))
-        // )
         let result = await client.query(
           query.Get(query.Match(query.Index("getLollyByPath"), path))
         )
@@ -33,6 +26,27 @@ const resolvers = {
         } else {
           throw new Error("Virtual Lolly not found.")
         }
+      } catch (err) {
+        return err
+      }
+    },
+    getAllLollies: async (root, { path }, context) => {
+      console.log(path)
+      try {
+        const docRefs = query.Paginate(
+          query.Documents(query.Collection("virtual-lollies"))
+        )
+
+        let results = await client.query(
+          query.Map(docRefs, query.Lambda("ref", query.Get(query.Var("ref"))))
+        )
+        results = results.data.map((o) => ({
+          id: o.ref.id,
+          ts: `${o.ts}`,
+          ...o.data,
+        }))
+
+        return results
       } catch (err) {
         return err
       }

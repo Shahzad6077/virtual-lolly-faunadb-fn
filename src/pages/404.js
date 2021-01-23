@@ -1,13 +1,12 @@
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui"
-import React from "react"
+import React, { Fragment } from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = () => (
-  <Layout>
+  <Fragment>
     <SEO title="404: Not found" />
     <Styled.h1>NOT FOUND</Styled.h1>
     <Styled.p>
@@ -16,7 +15,7 @@ const NotFoundPage = () => (
     <Styled.a as={Link} to="/">
       Go back to the homepage
     </Styled.a>
-  </Layout>
+  </Fragment>
 )
 
 export default NotFoundPage

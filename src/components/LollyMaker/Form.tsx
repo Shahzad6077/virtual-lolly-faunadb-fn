@@ -71,7 +71,7 @@ const Index: FC<Props> = React.forwardRef(({ loading }, register) => {
         <Label htmlFor="sendersName">From</Label>
         <Input ref={register} type="text" id="sendersName" name="from" />
 
-        <div sx={{ display: "flex", justifyContent: "center" }}>
+        <div sx={{ display: "flex", justifyContent: "center", mt: 12 }}>
           {loading ? (
             <Spinner />
           ) : (

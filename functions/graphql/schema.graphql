@@ -23,6 +23,7 @@ input LollyInput {
 }
 type Query {
   getLollyByPath(path: String!): Lolly!
+  getAllLollies: [Lolly!]
   hello: String
 }
 

@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import React, { FC } from "react"
-import { jsx } from "theme-ui"
+import React, { FC, useState } from "react"
+import { jsx, Message, Styled } from "theme-ui"
 import LollyTemplate from "./LollyTemplate"
 import LollyForm from "./Form"
 
@@ -12,6 +12,7 @@ import { CREATE_VIRTUAL_LOLLY } from "../../Services/virtualLolly"
 type Props = {}
 
 const LollyMaker: FC<Props> = () => {
+  const [generatedLink, setGeneratedLink] = useState<null | string>(null)
   const { register, watch, handleSubmit, reset } = useForm<FormData>({
     defaultValues: DEFAULT_FORM_VALUES,
   })
@@ -20,6 +21,7 @@ const LollyMaker: FC<Props> = () => {
     onCompleted(data) {
       reset()
       const generatedPath = data.createVirtualLolly
+      setGeneratedLink(generatedPath)
     },
     onError(err) {},
   })
@@ -32,18 +34,37 @@ const LollyMaker: FC<Props> = () => {
     })
   }
 
+  const originPath =
+    typeof window === "undefined"
+      ? "https://virtual-lolly-shahzad.netlify.app"
+      : window.origin
   return (
-    <div
-      className="lollyMaker"
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <LollyTemplate {...watchFills} />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <LollyForm ref={register({ required: true })} loading={loading} />
-      </form>
+    <div>
+      {generatedLink && (
+        <Message sx={{ my: 18 }}>
+          <Styled.h5 sx={{ m: 0, mb: "6px" }}>
+            Here is the Link, it will be available within frew Minutes 🔥{" "}
+          </Styled.h5>
+          <Styled.a
+            href={`${originPath}/freeze-lolly/${generatedLink}`}
+            target="__blank"
+          >
+            {`${originPath}/freeze-lolly/${generatedLink}`}
+          </Styled.a>
+        </Message>
+      )}
+      <div
+        className="lollyMaker"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <LollyTemplate {...watchFills} />
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <LollyForm ref={register({ required: true })} loading={loading} />
+        </form>
+      </div>
     </div>
   )
 }

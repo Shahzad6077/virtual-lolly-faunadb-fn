@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import React, { FC } from "react"
 import { jsx } from "theme-ui"
+import React, { FC } from "react"
 import Lollyillustration from "../../assets/lolly.svg"
 
 type Props = {
