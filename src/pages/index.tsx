@@ -30,7 +30,6 @@ const IndexPage = (props) => {
         {data ? data.hello : loading ? "Loading..." : error && error.message}
       </Styled.h1>
       <LollyMaker />
-      <Show pageContext={{ to: "sheri", from: "ali", description: a }} />
     </Fragment>
   )
 }

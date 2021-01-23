@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@graphql-tools/graphql-file-loader": "^6.2.0",
+    "@graphql-tools/load": "^6.2.0",
+    "@graphql-tools/schema": "^6.2.0",
+    "apollo-server-lambda": "^2.17.0",
+    "faunadb": "^4.0.0",
+    "shortid": "^2.2.16"
+  },
+  "author": "",
+  "license": "ISC"
+}

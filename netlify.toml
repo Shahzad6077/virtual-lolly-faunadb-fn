@@ -2,3 +2,5 @@
   command = "gatsby build"
   functions = "functions" #  netlify-lambda reads this
   publish = "public"
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
