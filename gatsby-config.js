@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Apollo Netlify`,
-    description: `This is an easy way to start developing fullstack GraphQL apps with Gatsby and Apollo Server (powered by Netlify functions).`,
-    author: `@piducancore`,
+    title: `Virtually Lolly`,
+    description: `Application to make virtual Lollies to send your friends.`,
+    author: `@shahzad6077`,
   },
   plugins: [
     `gatsby-plugin-theme-ui`,

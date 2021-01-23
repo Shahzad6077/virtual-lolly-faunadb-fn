@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-apollo-netlify",
+  "name": "virtually-lolly",
   "private": true,
   "description": "This project is an easy way to start developing fullstack apps with Gatsby and Apollo Server (using Netlify Lambda functions).",
   "version": "0.1.0",
-  "author": "@piducancore",
+  "author": "@shahzad6077",
   "dependencies": {
     "@apollo/client": "^3.1.4",
     "@graphql-tools/graphql-file-loader": "^6.2.0",
@@ -41,8 +41,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "start": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "netlify dev",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
