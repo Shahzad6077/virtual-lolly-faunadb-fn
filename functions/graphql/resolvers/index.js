@@ -1,10 +1,11 @@
 const faunadb = require("faunadb")
 const shortid = require("shortid")
+const axios = require("axios")
 require("dotenv").config()
 const query = faunadb.query
 
 const client = new faunadb.Client({ secret: process.env.FAUNADB_SERVER_SECRET })
-
+const BUILD_HOOK_URL = process.env.BUILD_HOOK_TRIGGER_URL
 // Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
@@ -72,11 +73,10 @@ const resolvers = {
           })
         )
 
-        // return {
-        //   id: result.ref.id,
-        //   ts: `${result.ts}`,
-        //   ...result.data,
-        // }
+        if (BUILD_HOOK_URL) {
+          const rres = await axios.post(BUILD_HOOK_URL)
+          console.log("build hook trigger successfully.")
+        }
         return path
       } catch (err) {
         return err
