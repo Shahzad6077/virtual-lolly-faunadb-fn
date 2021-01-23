@@ -1,0 +1,55 @@
+{
+  "name": "gatsby-starter-apollo-netlify",
+  "private": true,
+  "description": "This project is an easy way to start developing fullstack apps with Gatsby and Apollo Server (using Netlify Lambda functions).",
+  "version": "0.1.0",
+  "author": "@piducancore",
+  "dependencies": {
+    "@apollo/client": "^3.1.4",
+    "@graphql-tools/graphql-file-loader": "^6.2.0",
+    "@graphql-tools/load": "^6.2.0",
+    "@graphql-tools/schema": "^6.2.0",
+    "@theme-ui/presets": "^0.3.0",
+    "apollo-server-lambda": "^2.17.0",
+    "gatsby": "^2.24.53",
+    "gatsby-plugin-manifest": "^2.4.27",
+    "gatsby-plugin-offline": "^3.2.26",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-theme-ui": "^0.3.0",
+    "gatsby-theme-apollo": "^3.0.3",
+    "graphql": "^15.3.0",
+    "isomorphic-fetch": "^2.2.1",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-dropzone": "^11.0.3",
+    "react-helmet": "^6.1.0",
+    "theme-ui": "^0.3.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-graphql": "^4.0.0",
+    "prettier": "^2.1.1"
+  },
+  "keywords": [
+    "gatsby",
+    "apollo",
+    "graphql",
+    "netlify",
+    "theme-ui"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piducancore/gatsby-starter-apollo-netlify"
+  },
+  "bugs": {
+    "url": "https://github.com/piducancore/gatsby-starter-apollo-netlify/issues"
+  }
+}
